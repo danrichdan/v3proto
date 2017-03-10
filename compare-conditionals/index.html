@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comparisons and Conditionals</title>
+    <script>
+        var mySmallNumber = 5;
+        var myString = '5';
+        var myBigNumber = 255;
+
+        var output1 = mySmallNumber == myString;
+        var output2 = mySmallNumber === myString;
+        var output3 = mySmallNumber < myBigNumber;
+        var output4 = mySmallNumber > myBigNumber;
+
+        console.log('output1 is : ', output1);
+        console.log('output2 is : ', output2);
+        console.log('output3 is : ', output3);
+        console.log('output4 is : ', output4);
+
+        var gameNumber = 64;
+        var userInput1 = 39;
+        var userInput2 = 64;
+
+        if(userInput1 > gameNumber) {
+            console.log('The number is too high.');
+        }
+        if(userInput1 < gameNumber){
+            console.log('The number is too low.');
+        }
+        if(userInput1 < 1 || userInput1 > 100){
+            console.log('The number is out of range.');
+        } else {
+            console.log('The number is in range.');
+        }
+        if(userInput2 == gameNumber) {
+            console.log('The correct number has been guessed!');
+        } else {
+            console.log('Guess again, bozo.');
+        }
+
+        switch(userInput1) {
+            case 64:
+                console.log('You found the correct number!');
+                break;
+            case 54:
+                console.log('Too low but warm');
+                break;
+            case 74:
+                console.log('Too high but warm');
+                break;
+            case 39:
+                console.log('Too low and cold');
+                break;
+            case 89:
+                console.log('Too high and cold');
+                break;
+            default:
+                console.log('You are way off.');
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Comparisons and Conditionals</h1>
+    <h2>Please open your console.</h2>
+</body>
+</html>
