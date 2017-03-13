@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Prototype</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var count = 0; // A counter variable to be used in Feature Set 3
+
+        $(document).ready(function(){
+
+            $("#div1").addClass("pink");
+            $("#div1").click(function(){
+                count ++;
+                console.log("You clicked div 1, It is pink");
+                $("#div1").text('Click count: ' + count);
+            });
+
+            $("#div2").click(function(){
+                $("#div2").toggleClass("green");
+                if($("#div2").hasClass("green")){
+                    $("#div2").text("I am Green!");
+                }else{
+                    $("#div2").text("I am White!");
+                }
+            });
+
+            $('#div3').addClass('card-back');
+            $('#div4').addClass('card-back');
+            $('#div3').click(function(){
+                $('#div3').toggleClass('flag');
+            });
+            $('#div4').click(function(){
+                $('#div4').toggleClass('path');
+            });
+        });
+    </script>
+</head>
+<body class="no-select">
+<h1>Fun With jQuery</h1>
+
+<div id="div1">div 1</div>
+<div id="div2">div 2</div>
+<div id="div3">div 3</div>
+<div id="div4">div 4</div>
+
+</body>
+</html>
