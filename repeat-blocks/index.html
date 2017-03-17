@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Repeat Blocks</title>
+    <script>
+        //For Loops
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var i;
+        for(i = 0; i < numbers.length; i++) {
+            console.log(numbers[i]);
+        };
+        for(i = 9; i >= 0; i-- ) {
+            console.log(numbers[i]);
+        };
+        for(i = 0; i < numbers.length; i+= 2){
+            console.log(numbers[i]);
+        };
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+
+        for(i = 0; i < mixedArray.length; i++){
+            if(mixedArray[i]%2) {
+                console.log(mixedArray[i]);
+            }
+        };
+        //For In Loop
+        var classRoom = {
+            desk1: 'Stu',
+            desk2: 'Peggy',
+            desk3: 'LoneStar',
+            desk4: 'George',
+            desk5: 'Sheldon'
+        };
+        for(var index in classRoom) {
+            console.log(classRoom[index], 'is at', index);
+        };
+        //While Loop
+        var studentArray = [
+                {
+                    name: "Bob", grade: 87
+                }, {
+                    name: "Fred", grade: 82
+                }, {
+                    name: "George", grade: 93
+                }, {
+                    name: "Robert", grade: 85
+                }
+                ];
+        function findStudent(name) {
+            var found = false;
+            var i = 0;
+            var output;
+            while (!found && i < studentArray.length  ) {
+                if (name === studentArray[i].name) {
+                    found = true;
+                    output = 'Found ' + studentArray[i].name + ' their grade is ' + studentArray[i].grade;
+
+                }
+                i++;
+            }
+            if (!found) {
+                output = "Student " + name + " not found.";
+            };
+            console.log(output);
+        };
+        findStudent("George");
+        findStudent("Bob");
+        findStudent("Robert");
+        findStudent("Fred");
+        findStudent("Hank");
+    </script>
+<body>
+    <h1>Repeat Blocks</h1>
+    <h2>Please open your console.</h2>
+</body>
+</html>
