@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOP</title>
+    <script>
+        function coin_stack(starting_amount) {
+            this.value = starting_amount;
+            this.add_coins = function(coins_to_add) {
+                this.value =  this.value + coins_to_add;
+            };
+            this.remove_coins = function(coins_to_remove) {
+                if(this.value >= coins_to_remove) {
+                    this.value = this.value - coins_to_remove;
+                    return coins_to_remove;
+                }
+                if(this.value < coins_to_remove) {
+                    var coins_removed = this.value;
+                    this.value = 0;
+                    return coins_removed;
+                }
+            };
+        };
+        var my_coin_stack = new coin_stack(50);
+        console.log('my_coin_stack contains ' , my_coin_stack.value , 'coins');
+        my_coin_stack.add_coins(15);
+        console.log('I now have ' , my_coin_stack.value , 'coins in my coin stack.');
+        my_coin_stack.remove_coins(37);
+        console.log('I now have ' , my_coin_stack.value , 'coins in my coin stack.');
+        my_coin_stack.remove_coins(55);
+        console.log('I now have ' , my_coin_stack.value , 'coins in my coin stack.');
+
+        coin_stack.prototype.transfer_coins = function(transfer_from, amount) {
+            var amount_transferred = transfer_from.remove_coins(amount);
+            this.add_coins(amount_transferred);
+            return amount_transferred;
+        }
+        var erics_coins = new coin_stack(50);
+        var dans_coins =  new coin_stack(50);
+        console.log('erics_coins contains ' , erics_coins.value , 'coins');
+        console.log('dans_coins contains ' , dans_coins.value , 'coins');
+        erics_coins.transfer_coins(dans_coins, 30);
+        console.log('erics_coins now contains ' , erics_coins.value , 'coins');
+        console.log('dans_coins now contains ' , dans_coins.value , 'coins');
+        dans_coins.transfer_coins(erics_coins, 120);
+        console.log('erics_coins now contains ' , erics_coins.value , 'coins');
+        console.log('dans_coins now contains ' , dans_coins.value , 'coins');
+    </script>
+</head>
+<body>
+    <h1>OOP</h1>
+    <h2>Please open your console</h2>
+</body>
+</html>
