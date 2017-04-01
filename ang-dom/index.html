@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular DOM and Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body ng-app>
+    <h1>Angular DOM and Events</h1>
+    <div ng-init="disable=true; counter=0">
+        <span ng-hide="disable">enabled</span>
+        <span ng-show="disable">disabled</span>
+        <button ng-click="counter = counter + 1" ng-disabled="disable">Click It</button>
+        <input type="checkbox" ng-model="disable">
+        <p> The button has been clicked {{ counter }} times.</p>
+    </div>
+</body>
+</html>
